@@ -1,0 +1,2 @@
+export const runtime = 'nodejs';
+import { NextRequest,NextResponse } from 'next/server';import { db } from '@/db/client';import { ebooks } from '@/db/schema';export async function GET(){const rows=await db.select().from(ebooks);return NextResponse.json(rows);}export async function POST(req:NextRequest){const b=await req.json();const r=await db.insert(ebooks).values({ title:b.title, slug:b.slug }).returning();return NextResponse.json(r[0]);}

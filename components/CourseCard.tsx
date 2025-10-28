@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function CourseCard({ c }: { c: any }) {return (<div className="card space-y-2">{c.coverUrl && (<img src={c.coverUrl} alt={c.title} className="w-full h-40 object-cover rounded" />)}<h3 className="font-semibold text-lg">{c.title}</h3>{c.description && <p className="text-sm text-muted line-clamp-3">{c.description}</p>}<div className="flex gap-2 pt-2"><Link href={`/app/courses/${c.id}`} className="btn btn-sm">Abrir</Link></div></div>);}

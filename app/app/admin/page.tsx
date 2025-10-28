@@ -1,0 +1,1 @@
+import Link from 'next/link';export default function AdminHome(){return(<main className="p-6 space-y-4"><h1 className="title">Admin</h1><div className="grid-3"><Link className="card" href="/app/admin/courses">Cursos</Link><Link className="card" href="/app/admin/ebooks">Ebooks</Link><Link className="card" href="/app/admin/email">E-mail</Link></div></main>)}

@@ -1,0 +1,1 @@
+import sg from '@sendgrid/mail';const KEY=process.env.SENDGRID_API_KEY||'';if(KEY) sg.setApiKey(KEY);export async function sendMail(to:string,subject:string,html:string){if(!KEY)return;await sg.send({to,from:process.env.SENDGRID_FROM_EMAIL||'noreply@example.com',subject,html});}
